@@ -10,8 +10,6 @@ Sistema de acompanhamento de partidas de futebol em tempo real. Placar e eventos
 
 É um projeto de estudo deliberado, com dois objetivos declarados: entregar um live score funcional, e servir de veículo para aprofundar Go, Kafka, Redis, Terraform e observabilidade a ponto de poder **defender cada decisão arquitetural**.
 
-Consequência prática: todo o código executável é escrito manualmente. IA é usada como material de estudo, revisão e discussão — não como gerador de implementação. Um projeto de portfólio cujas decisões o autor não tomou não prova nada.
-
 ## O problema interessante
 
 O produto é simples de descrever. A dificuldade está numa contradição aparente entre os requisitos:
