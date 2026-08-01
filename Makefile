@@ -4,13 +4,18 @@
 CMDS := $(notdir $(wildcard cmd/*))
 BINS := $(addprefix bin/,$(CMDS))
 
-.PHONY: up down test lint build tidy help $(BINS)
+COMPOSE := docker compose --env-file .env.development -f deploy/compose/docker-compose.yaml
+
+.PHONY: up down down-clean test lint build tidy help $(BINS)
 
 up:
-	@echo "Not implemented"
+	@$(COMPOSE) up -d
 
 down:
-	@echo "Not implemented"
+	@$(COMPOSE) down
+
+down-clean:
+	@$(COMPOSE) down -v
 
 test:
 	@echo "Testing..."
@@ -33,6 +38,7 @@ help:
 	@echo "Usage:"
 	@echo "  make up        - Start the application"
 	@echo "  make down      - Stop the application"
+	@echo "  make down-clean - Stop and remove volumes"
 	@echo "  make test      - Run tests"
 	@echo "  make lint      - Run linter"
 	@echo "  make build     - Build the application"
