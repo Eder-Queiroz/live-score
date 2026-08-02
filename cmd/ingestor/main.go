@@ -1,7 +1,16 @@
 package main
 
-import "log"
+import (
+	"log"
+
+	"github.com/Eder-Queiroz/live-score/internal/config"
+)
 
 func main() {
-	log.Println("Ingestor")
+	cfg, err := config.LoadIngestor()
+	if err != nil {
+		log.Fatal(err)
+
+	}
+	log.Println(cfg)
 }

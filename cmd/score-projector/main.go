@@ -1,7 +1,16 @@
 package main
 
-import "log"
+import (
+	"log"
+
+	"github.com/Eder-Queiroz/live-score/internal/config"
+)
 
 func main() {
-	log.Println("Score Projector")
+	cfg, err := config.LoadScoreProjector()
+	if err != nil {
+		log.Fatal(cfg)
+
+	}
+	log.Println(cfg)
 }
